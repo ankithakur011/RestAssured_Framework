@@ -1,6 +1,7 @@
+package restAssured_Scripts;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
-import resources.payload;
+import resources.Payload;
 import static org.hamcrest.Matchers.*;
 
 import org.testng.Assert;
@@ -15,12 +16,22 @@ public class Basics {
 		//When - used to pass the HTTP request type (PUT,POST,PUT,DELETE) along with resource as a parameter
 		//Then - used to validate the response and extract and key value for assertion if necessary
 		
+		/*
+		 * Important pointers:
+		 * 
+		 * RestAssured.baseURI - To pass URI
+		 * Given() method start from query parameters
+		 * when() method is followed by HTTP method
+		 * then() method is followed by assertThat() hamcrest method for assertion
+		 * extract().response().asString() to extract complete response of the request
+		 * JsonPath class is used to extract complete response and parse json to get the exact values 
+		 */
 		
 		//POST Request and storing key value from the response code 
 		
 		RestAssured.baseURI="http://rahulshettyacademy.com/";
 		String response = given().log().all().queryParam("key", "qaclick123").header("Content-Type","application/json")
-		.body(payload.body())
+		.body(Payload.body())
 		.when().post("maps/api/place/add/json")
 		.then().assertThat().statusCode(200).body("scope", equalTo("APP"))
 		.header("Server", "Apache/2.4.41 (Ubuntu)").extract().response().asString();
