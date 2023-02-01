@@ -8,7 +8,7 @@ import org.testng.Assert;
 
 import static io.restassured.RestAssured.*;
 
-public class Basics {
+public class BasicsHTTPRequests {
 	
 	public static void main(String[] args) {
 		
@@ -24,7 +24,8 @@ public class Basics {
 		 * when() method is followed by HTTP method
 		 * then() method is followed by assertThat() hamcrest method for assertion
 		 * extract().response().asString() to extract complete response of the request
-		 * JsonPath class is used to extract complete response and parse json to get the exact values 
+		 * body("scope", equalTo("APP")) - equalTo() method is used for the response comparision
+		 * JsonPath class is used to extract complete response and parse json parameters to get the exact values 
 		 */
 		
 		//POST Request and storing key value from the response code 

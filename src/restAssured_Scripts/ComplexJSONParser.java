@@ -11,7 +11,7 @@ public class ComplexJSONParser {
 		
 		JsonPath js = new JsonPath(Payload.complexJSONBody());
 		
-		//1. Print No of courses returned by API
+		//1. Print no. of courses returned by API
 		int noOfCourses = js.getInt("courses.size()");
 		System.out.println("Number of courses are: "+noOfCourses);
 		
