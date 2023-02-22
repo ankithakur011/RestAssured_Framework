@@ -11,9 +11,9 @@ import org.testng.Assert;
 import io.restassured.RestAssured;
 import io.restassured.parsing.Parser;
 import io.restassured.path.json.JsonPath;
-import pojo.Api;
-import pojo.GetCourses;
-import pojo.WebAutomation;
+import pojoDeserialization.Api;
+import pojoDeserialization.GetCourses;
+import pojoDeserialization.WebAutomation;
 
 public class OAUTH2_Authentication {
 
